@@ -1,5 +1,4 @@
-source 'https://rubygems.org'
-
+source 'https://gems.ruby-china.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -23,16 +22,53 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'mini_racer', platforms: :ruby
+  gem 'pry'
+
+  # pry-doc extends two core pry commands:
+  # show-doc, alias ?
+  # show-source alias $
+  gem 'pry-doc'
+
+  # show-routes
+  # show-routes --grep beer
+  # show-routes --grep new
+  # show-models
+  gem 'pry-rails'
+
+  # Usage: binding.pry
+  # anywhere
+  gem 'pry-rescue'
+  gem 'pry-byebug'
+
+  # Color console output
+  gem 'rainbow'
+
+  #rspec
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+
+  # Automation test
+  gem 'poltergeist'
+  gem 'guard-minitest'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+
+  gem 'simplecov', :require => false
 end
 
 group :development do
@@ -42,6 +78,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'brakeman'
+  gem 'guard-rubocop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
