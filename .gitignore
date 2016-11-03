@@ -29,3 +29,9 @@ config/secrets.yml
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+# React on Rails
+npm-debug.log*
+node_modules
+
+# Generated js bundles
+/app/assets/webpack/*
