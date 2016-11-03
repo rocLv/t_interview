@@ -4,9 +4,9 @@
   <div class="container workspace simple-stack simple-stack-transition">
     <div class="page page-root simple-pjax">
       <div class="page-inner" id="page-events" data-page-name="动态" data-since="2016-11-03 02:54:27 UTC">
-        <%= render "filters" %>
+        <%= react_component 'FilterSelect' %>
+        <%= react_component 'TeamEvents' %>
 
-        <%= render "team_events" %>
 <a href="javascript:;" id="btn-load-more" class="over" style="display: block;">没有更多内容了</a>
       </div>
     </div>
