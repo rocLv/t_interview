@@ -705,6 +705,33 @@ input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner {
     color: #333
 }
 
+
+#btn-load-more {
+    width: 200px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    padding: 12px 0;
+    margin: 20px auto 0;
+    background: #e0e5d4;
+    color: #5a614b;
+    border-radius: 4px;
+    width: 80px;
+}
+
+#btn-load-more.loading {
+    cursor: default
+}
+
+#btn-load-more.over {
+    cursor: default;
+    color: #838a73
+}
+
+#btn-load-more.hide {
+    display: none
+}
+
 .center-box {
     width: 500px;
     overflow: hidden;

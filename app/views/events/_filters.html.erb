@@ -1,0 +1,86 @@
+<div class="filters">
+  <span class="filters-title">筛选动态</span>
+  <div class="filter filter-project">
+    <div class="simple-select require-select selected">
+      <input type="text" class="select-result" autocomplete="off" placeholder="">
+      <span class="link-expand" title="所有选项">
+        <i class="icon-caret-down">
+          <span>▾</span></i>
+      </span>
+      <span class="link-clear" title="清除选择">
+        <i class="icon-delete">
+        <span>✕</span></i>
+      </span>
+      <div class="select-list" style="display: none;">
+        <div class="select-item all-item selected">
+          <a href="javascript:;" class="label">
+            <span>所有项目、日历和周报</span>
+          </a>
+        </div>
+        <div class="select-item">
+          <a href="javascript:;" class="label">
+            <span>熟悉Tower</span>
+          </a>
+        </div>
+        <div class="select-item">
+          <a href="javascript:;" class="label">
+            <span>老麻来啦</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <select id="project-filter-select" style="display: none;">
+      <option value="-1" selected="">所有项目、日历和周报</option>
+      <option value="715c1e2bf8c045b5879eec6f492bcbde" data-key="shuxitower sxTower 熟悉Tower">
+         熟悉Tower
+      </option>
+      <option value="48dbafd63883428c98f05544a3608f2f" data-key="laomalaila lmll 老麻来啦">
+        老麻来啦
+      </option>
+    </select>
+  </div>
+
+  <div class="filter filter-member">
+    <div class="simple-select member-filter require-select selected">
+      <input type="text" class="select-result" autocomplete="off" placeholder="">
+      <span class="link-expand" title="所有选项">
+      <i class="icon-caret-down">
+        <span>▾</span>
+      </i>
+      </span>
+      <span class="link-clear" title="清除选择">
+        <i class="icon-delete">
+          <span>✕</span>
+        </i>
+      </span>
+      <div class="select-list" style="display: none;">
+        <div class="select-item all-item selected">
+          <a href="javascript:;" class="label">
+            <span>所有成员</span>
+          </a>
+        </div>
+        <div class="select-item member-item">
+          <img src="/assets/default_avatars/noon.jpg" class="avatar">
+          <a href="javascript:;" class="label member-item">
+            <span>淇淇</span>
+          </a>
+        </div>
+        <div class="select-item member-item">
+          <img src="/assets/default_avatars/nightfall.jpg" class="avatar">
+            <a href="javascript:;" class="label member-item">
+              <span>王强生</span>
+            </a>
+        </div>
+      </div>
+    </div>
+    <select id="member-filter-select" style="display: none;">
+      <option value="-1" selected="">所有成员</option>
+      <option value="4a" data-gavatar="/assets/default_avatars/noon.jpg" data-key="qiqi qq 淇淇">
+        淇淇
+      </option>
+      <option value="593c1a0d300a40ae9b9d5890f9c0930b" data-gavatar="/assets/default_avatars/nightfall.jpg" data-key="wangqiangsheng wqs 王强生">
+        王强生
+      </option>
+   </select>
+  </div>
+</div>
