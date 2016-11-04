@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104073728) do
+ActiveRecord::Schema.define(version: 20161104083043) do
 
   create_table "accesses", force: :cascade do |t|
     t.integer  "project_id"
@@ -77,8 +77,16 @@ ActiveRecord::Schema.define(version: 20161104073728) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.integer  "team_id"
+    t.string   "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "users_projects", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+    t.index ["project_id"], name: "index_users_projects_on_project_id"
+    t.index ["user_id"], name: "index_users_projects_on_user_id"
   end
 
 end
