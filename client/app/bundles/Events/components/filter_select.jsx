@@ -1,4 +1,6 @@
-class FilterSelect extends React.Component {
+import React, { PropTypes } from 'react';
+
+export default class FilterSelect extends React.Component {
   render () {
     return (
       <div>
