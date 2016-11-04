@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103031921) do
+ActiveRecord::Schema.define(version: 20161104073728) do
 
   create_table "accesses", force: :cascade do |t|
     t.integer  "project_id"
@@ -27,10 +27,20 @@ ActiveRecord::Schema.define(version: 20161103031921) do
     t.index ["title_id"], name: "index_comments_on_title_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.integer  "from_id"
+    t.integer  "actions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "todo_id"
+    t.index ["from_id"], name: "index_events_on_from_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -45,8 +55,12 @@ ActiveRecord::Schema.define(version: 20161103031921) do
 
   create_table "todos", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "content"
+    t.datetime "due_date"
+    t.integer  "executor_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "project_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,6 +76,7 @@ ActiveRecord::Schema.define(version: 20161103031921) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "team_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
