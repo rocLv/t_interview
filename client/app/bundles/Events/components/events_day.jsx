@@ -43,14 +43,14 @@ export default class EventsDay extends React.Component {
         {this.dateTitle(date)}
         <div className="events-day-content">
           {this.props.events.map( (event, index)  => {
-            return (
-              <EventsAncestor
-                key={"event-" + event.id}
-                event={event}
-              />
-            )
-          })
-
+                                     return (
+                                       <EventsAncestor
+                                         key={"event-" + event.id}
+                                         event={event}
+                                         visible={index == 0 ? true : false}
+                                       />
+                                     )
+                                   })
           }
         </div>
       </div>

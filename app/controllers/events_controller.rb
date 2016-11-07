@@ -15,5 +15,8 @@ class EventsController < ApplicationController
                                      todo: {include: {project:
                                               {include: :team}}}})
                end
+
+    @projects = current_user.team.projects.pluck(:id, :name).as_json
+
   end
 end
