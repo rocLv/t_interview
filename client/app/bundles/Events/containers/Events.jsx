@@ -22,7 +22,7 @@ export default class HelloWorld extends React.Component {
           updateName={e => this.updateName(e)}
         />
 
-        <TeamEvents />
+        <TeamEvents events={this.props.events} />
       </div>
     );
   }

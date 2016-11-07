@@ -10,7 +10,11 @@ export default class TeamEvents extends React.Component {
   render () {
     return (
       <div className="team-events">
-        <EventsDay />
+        {this.props.events.map( (event, index) => {
+          return (
+             <EventsDay key={"events-day-" + index} events={event} />
+          )
+        })}
       </div>
     );
   }
