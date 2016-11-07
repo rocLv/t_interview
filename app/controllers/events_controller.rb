@@ -5,7 +5,7 @@ class EventsController < ApplicationController
                   .distinct
                   .pluck('Date(created_at)')
 
-    @events = events_days.reverse.map do |date|
+    @events = events_days.sort.reverse.map do |date|
                 current_user.events
                   .where('Date(created_at) == ?', date)
                   .order(created_at: 'DESC')
