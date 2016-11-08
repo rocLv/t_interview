@@ -151,6 +151,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
+    pg (0.19.0)
     poltergeist (1.11.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -302,6 +303,7 @@ DEPENDENCIES
   kaminari
   listen (~> 3.0.5)
   mini_racer
+  pg
   poltergeist
   pry
   pry-byebug
