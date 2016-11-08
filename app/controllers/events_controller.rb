@@ -11,7 +11,9 @@ class EventsController < ApplicationController
       events = current_user.team.events.page(params[:page])
     end
 
-    unless events.nil?
+    if events.nil?
+      @events = []
+    else
       events_days = events.select('Date(created_at)')
                           .distinct
                           .pluck('Date(created_at)')

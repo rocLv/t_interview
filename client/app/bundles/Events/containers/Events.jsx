@@ -27,7 +27,8 @@ export default class HelloWorld extends React.Component {
   handleProjectSelectChange (project_id) {
     console.log('handle filter select: ', project_id)
     this.setState({
-      filter_project: project_id
+      filter_project: project_id,
+      page: 0,
     })
 
     this.fetch({
@@ -40,7 +41,8 @@ export default class HelloWorld extends React.Component {
   handleMemberSelectChange (member_id) {
     console.log('handle filter select: ', member_id)
     this.setState({
-      filter_member: member_id
+      filter_member: member_id,
+      page: 0,
     })
 
     this.fetch({
@@ -69,7 +71,6 @@ export default class HelloWorld extends React.Component {
       dataType: 'json',
       data: params,
       success: (data) => {
-        console.log('ajax data:', data.events.length)
         if (data.events.length == 0) {
           this.setState({
             more: '没有更多内容了',
