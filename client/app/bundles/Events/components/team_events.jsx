@@ -22,7 +22,7 @@ export default class TeamEvents extends React.Component {
       dataType: 'json',
       data: params,
       success: (data) => {
-        console.log(data)
+        console.log(data.events.length)
         if (data.events.length == 0) {
           this.setState({
             more: '没有更多内容了',
@@ -39,11 +39,8 @@ export default class TeamEvents extends React.Component {
   }
 
   handleMore() {
-    console.log('load more..')
-    const page = this.state.page + 1
-    if(this.state.enableMore) {
-      this.fetch({page: page})
-    }
+    console.log('handle more..')
+    this.props.loadMore()
   }
 
   render () {
@@ -56,7 +53,7 @@ export default class TeamEvents extends React.Component {
         })}
 
         <a
-          onClick={this.props.handleMore}
+          onClick={this.handleMore.bind(this)}
           id="btn-load-more"
           className="over"
           style={{display: 'block', width: '150px'}}

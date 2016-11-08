@@ -32,7 +32,7 @@ export default class HelloWorld extends React.Component {
 
     this.fetch({
       page: this.state.page,
-      projects: this.state.filter_project,
+      projects: project_id,
       members: this.state.filter_member,
     })
   }
@@ -46,12 +46,12 @@ export default class HelloWorld extends React.Component {
     this.fetch({
       page: this.state.page,
       projects: this.state.filter_project,
-      members: this.state.filter_member,
+      members: member_id,
     })
   }
 
   handleMore() {
-    console.log('load more..')
+    console.log('loading..')
     const page = this.state.page + 1
     if(this.state.enableMore) {
       this.fetch({
@@ -69,7 +69,7 @@ export default class HelloWorld extends React.Component {
       dataType: 'json',
       data: params,
       success: (data) => {
-        console.log('ajax data:', data)
+        console.log('ajax data:', data.events.length)
         if (data.events.length == 0) {
           this.setState({
             more: '没有更多内容了',
@@ -99,6 +99,8 @@ export default class HelloWorld extends React.Component {
       <TeamEvents
         events={this.state.events}
         enableMore={this.state.enableMore}
+        more={this.state.more}
+        loadMore={this.handleMore.bind(this)}
       />
       </div>
     );
