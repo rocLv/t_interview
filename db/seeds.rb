@@ -20,7 +20,7 @@ todos = projects.map do |project|
         end
 
 todos.each do |todo|
-  5.times do |i|
+  5.times do
     Event.create( from_id:    user.id,
                   project_id: todo.project.id,
                   actions: rand(5),
