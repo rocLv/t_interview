@@ -41,7 +41,14 @@ const config = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-      },
+      },{
+        test: /\.css$/,
+        loader: 'css?sourceMap&modules&localIdentName=[local]___[hash:base64:5]!!',
+        exclude: /node_modules/
+      },{
+        test: /\.(css|less)$/,
+        loader: "style-loader!css-loader"
+        }
     ],
   },
 };

@@ -14,7 +14,8 @@ class EventsController < ApplicationController
                                               {include: :team}}}})
                end
 
-    @projects = current_user.team.projects.pluck(:id, :name).as_json
+    @projects = current_user.team.projects.select(:id, :name).as_json
+    @members  = current_user.team.users.select(:id, :name).as_json
 
   end
 end

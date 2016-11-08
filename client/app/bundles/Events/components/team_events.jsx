@@ -10,6 +10,7 @@ export default class TeamEvents extends React.Component {
       events: this.props.events,
       projects: this.props.projects,
       more: '加载更多内容',
+      enableMore: true,
     }
 
   }
@@ -24,7 +25,8 @@ export default class TeamEvents extends React.Component {
         console.log(data)
         if (data.events.length == 0) {
           this.setState({
-            more: '没有更多内容了'
+            more: '没有更多内容了',
+            enableMore: false,
           })
         }
         this.setState({
@@ -39,7 +41,9 @@ export default class TeamEvents extends React.Component {
   handleMore() {
     console.log('load more..')
     const page = this.state.page + 1
-    this.fetch({page: page})
+    if(this.state.enableMore) {
+      this.fetch({page: page})
+    }
   }
 
   render () {
