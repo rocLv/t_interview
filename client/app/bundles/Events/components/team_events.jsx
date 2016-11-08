@@ -49,19 +49,19 @@ export default class TeamEvents extends React.Component {
   render () {
     return (
       <div className="team-events">
-        {this.state.events.map( (event, index) => {
+        {this.props.events.map( (event, index) => {
           return (
              <EventsDay key={"events-day-" + index} events={event} />
           )
         })}
 
         <a
-          onClick={this.handleMore.bind(this)}
+          onClick={this.props.handleMore}
           id="btn-load-more"
           className="over"
           style={{display: 'block', width: '150px'}}
         >
-          {this.state.more}
+          {this.props.more}
         </a>
       </div>
     );

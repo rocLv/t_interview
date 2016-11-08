@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104083043) do
+ActiveRecord::Schema.define(version: 20161108033237) do
 
   create_table "accesses", force: :cascade do |t|
     t.integer  "project_id"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20161104083043) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "todo_id"
+    t.integer  "team_id"
+    t.integer  "project_id"
     t.index ["from_id"], name: "index_events_on_from_id"
   end
 
@@ -45,12 +47,9 @@ ActiveRecord::Schema.define(version: 20161104083043) do
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
-    t.integer  "users_id"
-    t.integer  "projects_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["projects_id"], name: "index_teams_on_projects_id"
-    t.index ["users_id"], name: "index_teams_on_users_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "project_id"
   end
 
   create_table "todos", force: :cascade do |t|

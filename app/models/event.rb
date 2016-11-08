@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :from, class_name: "User", foreign_key: "from_id"
   belongs_to :todo
+  belongs_to :team
+  belongs_to :project
 
   paginates_per 50
 

@@ -7,6 +7,14 @@ export default class FilterSelect extends React.Component {
     super(props)
   }
 
+  handleChange(value) {
+    this.props.handleProjectChange(value)
+  }
+
+  handleMemberChange(value) {
+    this.props.handleMemberChange(value)
+  }
+
   render () {
     const projectsOptions = this.props.projects.map((project) => (
                                        <Option key={project.id.toString()}>
@@ -28,14 +36,16 @@ export default class FilterSelect extends React.Component {
           notFoundContent=""
           optionFilterProp="children"
           style={{ width: 200  }}
-          defaultValue="所有项目和日历"
+          defaultValue="0"
+          onChange={this.handleChange.bind(this)}
         >
           {projectsOptions}
         </Select>
         <Select
           tags
           showSearch
-          defaultValue="所有成员"
+          defaultValue="0"
+          onChange={this.handleMemberChange.bind(this)}
         >
           {membersOptions}
         </Select>
